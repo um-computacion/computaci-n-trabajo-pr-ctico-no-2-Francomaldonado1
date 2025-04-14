@@ -25,7 +25,7 @@ class TestFrasesPalindromas(unittest.TestCase):
         self.assertTrue(is_palindrome("Step on no pets."))  
         self.assertTrue(is_palindrome("Mr. Owl ate my metal worm!"))  
         self.assertTrue(is_palindrome("A Santa at NASA."))  
-        
+
 class TestNoPalindromes(unittest.TestCase):
     def test_no_palindromes(self):
         self.assertFalse(is_palindrome("hello"))
@@ -36,5 +36,16 @@ class TestNoPalindromes(unittest.TestCase):
         self.assertFalse(is_palindrome("Mendoza"))
         self.assertFalse(is_palindrome("practicando TDD"))
 
+class TestEdgeCases(unittest.TestCase):
+    def test_edge_cases(self):  
+        self.assertTrue(is_palindrome(""))            
+        self.assertTrue(is_palindrome("a"))             
+        self.assertTrue(is_palindrome("A"))             
+        self.assertTrue(is_palindrome("aa"))         
+        self.assertFalse(is_palindrome("ab"))           
+        self.assertTrue(is_palindrome("   "))        
+        self.assertTrue(is_palindrome(" A "))           
+        self.assertTrue(is_palindrome(" Racecar "))
+                        
 if __name__ == '__main__':  
     unittest.main()  
